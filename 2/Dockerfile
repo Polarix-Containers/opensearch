@@ -25,7 +25,7 @@ RUN --network=none \
     addgroup -g ${GID} opensearch \
     && adduser -u ${UID} --ingroup opensearch --disabled-password --system opensearch --home ${OPENSEARCH_HOME}
 
-COPY --from opensearchproject/opensearch:2 --chown=$UID:$GID /usr/share/opensearch ${OPENSEARCH_HOME}
+COPY --from=opensearchproject/opensearch:2 --chown=$UID:$GID /usr/share/opensearch ${OPENSEARCH_HOME}
 
 USER opensearch
 WORKDIR ${OPENSEARCH_HOME}
