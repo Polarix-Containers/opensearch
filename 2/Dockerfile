@@ -18,7 +18,7 @@ ENV PATH=$PATH:$JAVA_HOME/bin:$OPENSEARCH_HOME/bin
 ENV LD_LIBRARY_PATH="$OPENSEARCH_HOME/plugins/opensearch-knn/lib"
 
 RUN apk -U upgrade \
-    && apk add libstdc++ sed \
+    && apk add bash libstdc++ sed \
     && rm -rf /var/cache/apk/*
 
 RUN --network=none \
